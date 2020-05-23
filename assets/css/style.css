@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Just+Another+Hand&display=swap');
+
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+  body {
+    background-color: #55efc4;
+    background-image: linear-gradient(315deg, #55efc4 0%, #000000 74%);
+  } 
+
+  .navbar {
+    background-color: transparent;
+  }
+  
+  .nav-logo {
+    height: 100px;
+    width: 100px;
+  }
+
+
+  .fa-github, .fa-github:hover, .fa-github:focus {
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.btn-danger {
+  z-index: 1;
+  transition: all 0.3s ease 0s;
+  color: black;
+  background-color: #006633;
+  border-radius: 20px;
+  font-size: 16px;
+  font-weight: 500;
+}
+  
+.btn-danger:hover {
+  z-index: 1;
+  color: #006633;
+  background-color: black;
+  transform: translateY(-7px);
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+}
+
+.fa-gamepad {
+  background: -webkit-linear-gradient(315deg, #63d471 70%, #233329 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+
+.big {
+  font-size: 95px;
+
+  background: -webkit-linear-gradient(315deg, #63d471 0%, #233329 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.small {
+  font-size: 55px;
+  font-weight: 700;
+  background: linear-gradient(315deg, #63d471 0%, #233329 50%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+  header.masthead {
+    position: relative;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    padding-top:2rem;
+    padding-bottom: 4rem;
+  }
+
+
+  
+  header.masthead .overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+
+.mb-5 {
+  font-weight: 700;
+  font-size: 50px;
+}
+
+.jumbotron {
+  background: transparent;
+  margin-bottom: 1rem;
+}
+
+.display-4 {
+  font-family: 'VT323', monospace;
+  color: #b0bec5;
+  font-size: 80px;
+  font-weight: 400;
+}
+
+
+.lead {
+  font-family: 'Just Another Hand', cursive;
+  color: #99ffd6;
+  word-spacing: 6px;
+  letter-spacing: 1px;
+  font-size: 33px;
+}
+
+
+ .programs{
+     padding-left: 200px;
+     padding-right: 200px;
+     padding-bottom: 40px;
+     padding-top: 50px;
+ }
+
+.card-deck {
+    padding-top: 30px;
+}
+
+.card-deck .card {
+  border: none;
+  margin-left: 60px;
+  margin-right: 60px;
+  -webkit-box-shadow: 13px 4px 58px -3px rgba(87,161,96,1);
+-moz-box-shadow: 13px 4px 58px -3px rgba(87,161,96,1);
+box-shadow: 13px 4px 58px -3px rgba(87,161,96,1);
+}
+
+.card-image {
+    width: 100%;
+    height: 250px;
+}
+
+.card-body {
+  text-align: center;
+  background-color: #006633;
+}
+
+.card-title {
+  color: black;
+  font-weight: 600;
+  font-size: 26px;
+}
+
+a, a:hover, a:focus, a:active {
+  text-decoration: none;
+}
+
+
+.cd-top {
+  right: 0;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  position: fixed;
+  bottom: 20px;
+  right: 3px;
+  display: inline-block;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+
+
+
+
+.goup {
+  position: absolute;
+  right: 20px;
+  margin-bottom: 20px;
+}
+
+.fa-arrow-circle-up, .fa-arrow-circle-up:hover, .fa-arrow-circle-up:visited, .fa-arrow-circle-up:active {
+  color: #1aff1a;
+  text-decoration: none;
+  font-size: 50px;
+}
+
+
+
+
+@media (max-width: 575.98px) { 
+
+  body {
+    background-color: #55efc4;
+    background-image: linear-gradient(315deg, #55efc4 0%, #000000 95%);
+  }
+  .nav-logo {
+    height: 60px;
+    width: 60px;
+  }
+  .fa-github, .fa-github:hover, .fa-github:focus {
+    font-size: 40px;
+    top: 30px;
+    right: 30px;
+  }
+
+  header.masthead {
+    padding-top:0.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .display-4 {
+    font-size: 50px;
+  }
+
+  .card-deck {
+    padding-top: 30px;
+    padding-left: 15px;
+    padding-right: 15px;
+    
+  }
+  .lead {
+    font-size: 20px;
+  }
+ 
+.card-image {
+    width: 100%;
+    height: 200px;
+ }
+
+ .programs {
+   padding: 30px;
+ }
+ .card-deck .card {
+  margin-left: 10px;
+  margin-right: 10px;
+ }
+ .cd-top {
+  right: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  bottom: 15px;
+  right: 3px;
+}
+.fa-arrow-circle-up, .fa-arrow-circle-up:hover, .fa-arrow-circle-up:visited, .fa-arrow-circle-up:active {
+  color: #1aff1a;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+}
+
+
+
+@media (min-width: 576px) and (max-width: 767.98px) { 
+  body {
+    background-color: #55efc4;
+    background-image: linear-gradient(315deg, #55efc4 0%, #000000 95%);
+  }
+  .nav-logo {
+    height: 60px;
+    width: 60px;
+  }
+  .fa-github, .fa-github:hover, .fa-github:focus {
+    font-size: 40px;
+    top: 30px;
+    right: 30px;
+  }
+
+  .lead {
+    font-size: 20px;
+  }
+
+
+  header.masthead {
+    padding-top:0.5rem;
+    padding-bottom: 4rem;
+  }
+  .display-4 {
+    font-size: 50px;
+  }
+
+  .card-deck {
+    padding-top: 30px;
+  }
+ 
+.card-image {
+    width: 100%;
+    height: 200px;
+ }
+
+ .programs {
+   padding: 30px;
+ }
+ .card-deck .card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.cd-top {
+  right: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  bottom: 15px;
+  right: 3px;
+}
+.fa-arrow-circle-up, .fa-arrow-circle-up:hover, .fa-arrow-circle-up:visited, .fa-arrow-circle-up:active {
+  color: #1aff1a;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+
+}
+
+
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  body {
+    background-color: #55efc4;
+    background-image: linear-gradient(315deg, #55efc4 0%, #000000 95%);
+  }
+  .nav-logo {
+    height: 60px;
+    width: 60px;
+  }
+
+  .fa-github, .fa-github:hover, .fa-github:focus {
+    font-size: 40px;
+    top: 30px;
+    right: 30px;
+  }
+
+  .display-4 {
+    font-size: 50px;
+  }
+
+  .lead {
+    font-size: 20px;
+  }
+
+  header.masthead {
+    padding-top:0.5rem;
+    padding-bottom: 4rem;
+  }
+
+  .card-deck {
+    padding-top: 30px;
+  }
+ 
+.card-image {
+    width: 100%;
+    height: 200px;
+ }
+
+ .programs {
+   padding: 30px;
+ }
+ .card-deck .card {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.cd-top {
+  right: 0;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  bottom: 15px;
+  right: 3px;
+}
+.fa-arrow-circle-up, .fa-arrow-circle-up:hover, .fa-arrow-circle-up:visited, .fa-arrow-circle-up:active {
+  color: #1aff1a;
+  text-decoration: none;
+  font-size: 40px;
+}
+
+ }
+
+
+ @media only screen 
+ and (min-device-width : 768px) 
+ and (max-device-width : 1024px) {
+
+  body {
+    background-color: #55efc4;
+    background-image: linear-gradient(315deg, #55efc4 0%, #000000 95%);
+  }
+
+  .nav-logo {
+    height: 110px;
+    width: 110px;
+  }
+  .fa-github, .fa-github:hover, .fa-github:focus {
+    font-size: 70px;
+  } 
+
+  .lead {
+    font-size: 40px;
+  }
+
+  .big{
+    font-size: 120px;
+  }
+
+  .small {
+    font-size: 80px;
+  }
+
+  .display-4 {
+    font-size: 90px;
+  }
+
+  .card-deck {
+    padding-top: 30px;
+  }
+ 
+  .card-deck .card {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+
+.card-image {
+    width: 100%;
+    height: 200px;
+ }
+
+ .programs {
+   padding: 30px;
+ }
+ .fa-arrow-circle-up, .fa-arrow-circle-up:hover, .fa-arrow-circle-up:visited, .fa-arrow-circle-up:active {
+  color: #1aff1a;
+  text-decoration: none;
+  font-size: 50px;
+}
+  }
+
+
+  .footer {
+    background-color: none;
+}
+
+.footer-heart{
+  text-align:center;
+  font-weight: 600;
+	font-family: open sans, sans-serif;
+	color: #006633;
+}
+
+.footer-heart a{
+    color: #0a2c0a;
+     text-decoration: none;}
+
+.emoji{vertical-align: middle;}
+
+
+
+
+
+.space-invader { 
+  vertical-align: middle;
+  text-align: center;
+  display: inline-block;
+  border: 2px solid green;
+  background-color: green;
+  width: 0.25em; 
+  height: 0.25em; 
+  margin: 40px 40px;
+}
+
+.space-invader-1 {
+  box-shadow:
+    0 0 0 .25em green,
+    0 .25em 0 .25em green,
+    -.625em .375em 0 .125em green,
+    .625em .375em 0 .125em green,
+    -.75em -.75em 0 0 green,
+    .75em -.75em 0 0 green,
+    -.5em -.5em 0 0 green,
+    .5em -.5em 0 0 green,
+    -.75em -.25em 0 0 green,
+    -.5em -.25em 0 0 green,
+    .5em -.25em 0 0 green,
+    .75em -.25em 0 0 green,
+    -1em 0 0 0 green,
+    -.75em 0 0 0 green,
+    .75em 0 0 0 green,
+    1em 0 0 0 green,
+    -1em .25em 0 0 green,
+    1em .25em 0 0 green,
+    -.75em .75em 0 0 green,
+    .75em .75em 0 0 green,
+    /* Left Arm */
+    1.25em .25em 0 0 green,
+    1.25em .5em 0 0 green,
+    1.25em .75em 0 0 green,
+    /* Right Arm */
+    -1.25em .25em 0 0 green,
+    -1.25em .5em 0 0 green,
+    -1.25em .75em 0 0 green,
+    /* Left Foot */
+    -.25em 1em 0 0 green,
+    -.5em 1em 0 0 green,
+    /* Right Foot */
+    .25em 1em 0 0 green,
+    .5em 1em 0 0 green;
+}
+
+
+
+.space-invader.animate { 
+  animation: 1s infinite;
+}
+.space-invader.classic { 
+  animation: 1s step-end infinite;
+}
+.space-invader-1.animate,
+.space-invader-1.classic { 
+  animation-name: space-invader-1;
+}
+
+
+@keyframes space-invader-1 {
+  50% {
+    box-shadow: 
+      0 0 0 .25em green,
+      0 .25em 0 .25em green,
+      -.625em .375em 0 .125em green,
+      .625em .375em 0 .125em green,
+      -.75em -.75em 0 0 green,
+      .75em -.75em 0 0 green,
+      -.5em -.5em 0 0 green,
+      .5em -.5em 0 0 green,
+      -.75em -.25em 0 0 green,
+      -.5em -.25em 0 0 green,
+      .5em -.25em 0 0 green,
+      .75em -.25em 0 0 green,
+      -1em 0 0 0 green,
+      -.75em 0 0 0 green,
+      .75em 0 0 0 green,
+      1em 0 0 0 green,
+      -1em .25em 0 0 green,
+      1em .25em 0 0 green,
+      -.75em .75em 0 0 green,
+      .75em .75em 0 0 green,
+      /* Left Arm */
+      1.25em 0 0 0 green,
+      1.25em -.25em 0 0 green,
+      1.25em -.5em 0 0 green,
+      /* Right Arm */
+      -1.25em 0 0 0 green, 
+      -1.25em -.25em 0 0 green, 
+      -1.25em -.5em 0 0 green, 
+      /* Left Foot */
+      -1em 1em 0 0 green, 
+      -1em 1em 0 0 green, 
+      /* Right Foot */
+      1em 1em 0 0 green, 
+      1em 1em 0 0 green;
+  }
+}
+

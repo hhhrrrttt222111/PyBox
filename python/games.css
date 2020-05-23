@@ -1,0 +1,339 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Narrow&family=Ubuntu+Condensed&display=swap');
+
+
+
+body{
+    background-color:black;
+background-image:
+radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+  .nav-logo {
+    height: 90px;
+    width: 100px;
+  }
+
+.btn-dark{
+    border: none;
+    font-weight: 500;
+    text-decoration: none;
+    color: #002106;
+    background-color: #00cc00;
+    box-shadow: 0px 15px 20px rgba(0, 204, 0, 0.4);
+}
+.btn-dark:hover{
+    border: none;
+    color: #00cc00;
+    background-color: #002106;
+}
+
+.col-sm-4 {
+    padding-top: 90px;
+    padding-right: 100px;
+}
+
+
+
+.carousel-inner {
+    padding-top: 1px;
+}
+
+.game-description {
+    padding: 1px;
+}
+
+.download {
+    padding-bottom: 10px;
+    padding-left: 10px;
+}
+
+.python-icon {
+    height: 38px;
+    width: 38px;
+}
+
+
+.game-title {
+    color: burlywood;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    font-size: 50px;
+}
+
+.game-desc {
+    color: cornsilk;
+    font-family: 'PT Sans Narrow', sans-serif;
+    font-size: 20px;
+}
+
+.code {
+    padding-top: 40px;
+    background-color: lightgray;
+    box-shadow: 0 8px 18px 3px burlywood;
+    border-radius: 40px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    scrollbar-width: none;
+    color: chartreuse;
+    background-color: black;
+}
+.code::-webkit-scrollbar {
+   display: none;
+}
+
+
+.carousel-inner {
+    height: 100%;
+    border-radius: 30px;
+}
+
+
+.comment {
+    color: #0099ff;
+}
+
+.variable {
+    color: #ffcce6;
+}
+
+.data-type {
+    color: #e60073;
+}
+
+.in-built {
+    color: #ffff80;
+}
+
+
+
+
+.images {
+    padding: 100px;
+}
+
+
+.fa-github, .fa-github:hover, .fa-github:focus {
+    text-decoration: none;
+    color: whitesmoke
+}
+
+i, i:hover,i:focus, i:visited {
+    color: whitesmoke;
+}
+
+.dwnld {
+    color: paleturquoise;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.buyme {
+
+    padding-bottom: 30px;
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+}
+
+a:hover  {
+    text-decoration: none;
+}
+
+.buy, .buy:hover, .buy:visited, .buy:focus {
+    vertical-align: middle;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    color: wheat;
+    position: relative;
+    top: 17px;
+    font-size: 30px;
+    padding-right: 20px;
+}
+
+
+.coffee {
+    margin-top: 20px;
+    height: 60px;
+    width: 60px;
+}
+
+
+
+.footer {
+    background-color: none;
+}
+
+.footer-heart{
+	text-align:center;
+	font-family: open sans, sans-serif;
+	color: #b0bec5;
+}
+
+.footer-heart a{
+    color: #1aff1a;
+     text-decoration: none;}
+
+.emoji{vertical-align: middle;}
+
+
+
+@media (max-width: 575.98px) { 
+    .images {
+    padding: 10px;
+}
+
+.nav-logo {
+    height: 60px;
+    width: 60px;
+  }
+
+.col-sm-4 {
+    padding-top: 5px;
+    padding-right: 10px;
+}
+.game-desc {
+    font-size: 18px;
+}
+.game-title {
+    font-size: 30px;
+}
+
+.coffee {
+    margin-top: 10px;
+    height: 50px;
+    padding: 10px;
+    width: 50px;
+}
+.buyme {
+    padding-bottom: 30px;
+    padding-left: 10px;
+}
+.buy, .buy:hover, .buy:visited, .buy:focus {
+    font-size: 20px;
+    padding-right: 15px;
+}
+  }
+  
+  
+  
+  @media (min-width: 576px) and (max-width: 767.98px) { 
+   
+    .images {
+        padding: 10px;
+    }
+    .nav-logo {
+        height: 60px;
+        width: 60px;
+      }
+    
+    .col-sm-4 {
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+    .game-desc {
+        font-size: 18px;
+    }
+    .game-title {
+        font-size: 30px;
+    }
+    
+    .coffee {
+        margin-top: 10px;
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+    }
+    .buyme {
+        padding-bottom: 30px;
+        padding-left: 10px;
+    }
+    .buy, .buy:hover, .buy:visited, .buy:focus {
+        font-size: 20px;
+        padding-right: 15px;
+    }
+  
+  }
+  
+  
+  
+  @media (min-width: 768px) and (max-width: 991.98px) {
+   
+    .images {
+        padding: 10px;
+    }
+    .nav-logo {
+        height: 60px;
+        width: 60px;
+      }
+    
+
+    .col-sm-4 {
+        padding-top: 5px;
+        padding-right: 10px;
+    }
+    .game-desc {
+        font-size: 18px;
+    }
+    .game-title {
+        font-size: 30px;
+    }
+    
+    .coffee {
+        margin-top: 10px;
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+    }
+    .buyme {
+        padding-bottom: 30px;
+        padding-left: 10px;
+    }
+    .buy, .buy:hover, .buy:visited, .buy:focus {
+        font-size: 20px;
+        padding-right: 15px;
+    }
+   }
+  
+  
+   @media only screen 
+   and (min-device-width : 768px) 
+   and (max-device-width : 1024px) {
+    .images {
+        padding: 10px;
+    }
+    .nav-logo {
+        height: 110px;
+        width: 110px;
+      }
+    
+    .coffee {
+        margin-top: 10px;
+        height: 50px;
+        width: 50px;
+        padding: 10px;
+    }
+    .col-sm-4 {
+        padding-top: 95px;
+        padding-right: 15px;
+    }
+    .game-desc {
+        font-size: 30px;
+    }
+    .game-title {
+        font-size: 55px;
+        padding-bottom: 10px;
+    }
+    .buyme {
+        padding-bottom: 30px;
+        padding-left: 10px;
+    }
+    .buy, .buy:hover, .buy:visited, .buy:focus {
+        font-size: 20px;
+        padding-right: 15px;
+    }
+    }
