@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="games.css">
-    <title>PyBox - </title>
+    <title>PyBox - Tile 15</title>
   </head>
   <body>
 
@@ -40,7 +40,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-                    <h1 class="game-title">Game Title</h1>
+                    <h1 class="game-title">Tile 15</h1>
                     <p class="game-desc">Some text about me in culpa qui officia deserunt mollit anim..</p>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
@@ -56,8 +56,8 @@
                   
                    <div class="download">
                     <h4 class="dwnld">Download</h4>
-                    <a class="btn" href="new.txt" download><i class="fa fa-2x fa-file"></i></a>
-                    <a class="btn" href="new.txt" download><img src="../assets/icons/python-icon.png" alt="python-icon" class="python-icon"></i></a>
+                    <a class="btn" href="Text/Tile-15.txt" download><i class="fa fa-2x fa-file"></i></a>
+                    <a class="btn" href="../Games/Tile15.py" download><img src="../assets/icons/python-icon.png" alt="python-icon" class="python-icon"></i></a>
                    </div>
                     
 
@@ -65,38 +65,105 @@
                     <!-- CODE -->
                     <pre class="code">
                         
-  <span class="comment"># import packages</span>
-    import socket
-    import select
-    import errno
-    import sys
-                        
-    <span class="variable">HEADER_LENGTH</span> = 10
-    IP = "127.0.0.1"
-    PORT = 1234
-                        
-    my_username = <span class="in-built">input</span>("Username:")
-    client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    client_socket.connect((IP, PORT))
-    client_socket.setblocking(False)
-                        
-                        username = my_username.encode('utf-8')
-                        client_socket.send(username_header + username)
-                        
-                        while True:
-                            message = input(f"{my_username} > ")
-                        
-                            if message:
-                                message = message.encode('utf-8')
-    message_header = f"{len(message):< {HEADER_LENGTH}}".encode('utf-8')
-                                client_socket.send(message_header + message)
-                        
-                            try:
-                                while <span class="data-type">True</span>:
-                                    username_header = client_socket.recv(HEADER_LENGTH)
-                                    if not len(username_header):
-                                        print("Connection closed by the server")
-                                        sys.exit()
+    <span class="comment"># This game is from the official documentation of freegames
+    # https://pypi.org/project/freegames/
+
+    # pip install freegames
+
+    # Tap on Tile to Move
+
+    # import modules</span>
+    <span class="in-built">from</span> random <span class="in-built">import</span> *
+    <span class="in-built">import</span> turtle as t
+    <span class="in-built">from</span> freegames <span class="in-built"><span class="in-built">import</span></span> <span class="function">floor</span>, <span class="function">vector</span>
+
+    <span class="comment"># Set window title, color and icon</span>
+    t.<span class="function">title</span>("Tile-15")
+    <span class="variable">root</span> = t.<span class="function">Screen</span>()._root
+    <span class="variable">root</span>.<span class="function">iconbitmap</span>("logo-ico.ico")
+    t.<span class="function">bgcolor</span>('#990099')
+
+    <span class="variable">tiles</span> = {}
+    <span class="variable">neighbors</span> = [
+        <span class="function">vector</span>(100, 0),
+        <span class="function">vector</span>(-100, 0),
+        <span class="function">vector</span>(0, 100),
+        <span class="function">vector</span>(0, -100),
+    ]
+
+    <span class="comment"># Set window title, color and icon</span>
+    <span class="comment"># Load tiles and scramble</span>
+    <span class="in-built">def</span> <span class="function">load</span>():
+
+        <span class="variable">count</span> = 1
+
+        <span class="in-built">for</span> y <span class="in-built">in </span><span class="function">range</span>(-200, 200, 100):
+            <span class="in-built">for</span> x <span class="in-built">in </span><span class="function">range</span>(-200, 200, 100):
+                mark = <span class="function">vector</span>(x, y)
+                <span class="variable">tiles</span>[mark] = <span class="variable">count</span>
+                <span class="variable">count</span> += 1
+
+        <span class="variable">tiles</span>[mark] = None
+
+        <span class="in-built">for</span> <span class="variable">count</span> <span class="in-built">in </span><span class="function">range</span>(1000):
+            <span class="variable">neighbor</span> = choice(<span class="variable">neighbors</span>)
+            <span class="variable">spot</span> = mark + <span class="variable">neighbor</span>
+
+            <span class="in-built">if</span> <span class="variable">spot</span> <span class="in-built">in </span><span class="variable">tiles</span>:
+                number = <span class="variable">tiles</span>[<span class="variable">spot</span>]
+                <span class="variable">tiles</span>[<span class="variable">spot</span>] = None
+                <span class="variable">tiles</span>[mark] = number
+                mark = <span class="variable">spot</span>
+
+    <span class="comment"># Draw white square with black outline and number</span>
+    <span class="in-built">def</span> <span class="function">square(</span>mark, number):
+        t.<span class="function">up</span>()
+        t.<span class="function">goto</span>(mark.x, mark.y)
+        t.<span class="function">down</span>()
+
+        t.<span class="function">color</span>('#003325', '#ffb3e6')
+        t.<span class="function">begin_fill</span>()
+        <span class="in-built">for</span> <span class="variable">count</span> <span class="in-built">in </span><span class="function">range</span>(4):
+            t.<span class="function">forward</span>(99)
+            t.<span class="function">left</span>(90)
+        t.<span class="function">end_fill</span>()
+
+        <span class="in-built">if</span> number is None:
+            <span class="in-built">return</span>
+        <span class="in-built">elif</span> number < 10:
+            t.<span class="function">forward</span>(20)
+
+        t.<span class="function">write</span>(number, font=('Arial', 45, 'normal'))
+
+    <span class="comment"># Swap tile and empty square</span>
+    <span class="in-built">def</span> tap(x, y):
+        x = <span class="function">floor</span>(x, 100)
+        y = <span class="function">floor</span>(y, 100)
+        mark = <span class="function">vector</span>(x, y)
+
+        <span class="in-built">for</span> <span class="variable">neighbor</span> <span class="in-built">in </span><span class="variable">neighbors</span>:
+            <span class="variable">spot</span> = mark + <span class="variable">neighbor</span>
+
+            <span class="in-built">if</span> <span class="variable">spot</span> <span class="in-built">in </span><span class="variable">tiles</span> and <span class="variable">tiles</span>[<span class="variable">spot</span>] is None:
+                number = <span class="variable">tiles</span>[mark]
+                <span class="variable">tiles</span>[<span class="variable">spot</span>] = number
+                <span class="function">square(</span><span class="variable">spot</span>, number)
+                <span class="variable">tiles</span>[mark] = None
+                <span class="function">square(</span>mark, None)
+
+    <span class="comment"># Draw all tiles</span>
+    <span class="in-built">def</span> draw():
+        <span class="in-built">for</span> mark <span class="in-built">in </span><span class="variable">tiles</span>:
+            <span class="function">square(</span>mark, <span class="variable">tiles</span>[mark])
+        t.<span class="function">update</span>()
+
+    t.<span class="function">setup</span>(420, 420, 370, 0)
+    t.<span class="function">hideturtle</span>()
+    t.<span class="function">tracer</span>(False)
+    <span class="function">load</span>()
+    draw()
+    t.<span class="function">onscreenclick</span>(tap)
+    t.<span class="function">done</span>()
 
                         </pre>
 
@@ -116,10 +183,10 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="../civil6.jpg" class="d-block w-100" alt="...">
+                            <img src="img/tile-15-1.PNG" class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
-                            <img src="../electronics4.jpg" class="d-block w-100" alt="...">
+                            <img src="img/tile-15-2.PNG" class="d-block w-100" alt="...">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">

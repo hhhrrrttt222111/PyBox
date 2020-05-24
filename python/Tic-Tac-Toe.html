@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:title" content="PyBox - Python Games">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Python Games to increase your skill and experience in Python">
+<!--     <meta property="og:image" content="">
+    <meta property="og:url" content=""> -->
+
+    <meta name="twitter:title" content="PyBox - Python Games">
+    <meta name="twitter:site" content="@hhhrrrttt222111">
+    <meta name="twitter:creator" content="@hhhrrrttt222111">
+    <meta name="twitter:description" content="Python Games to increase your skill and experience in Python">
+
+    
+    <link rel = "icon" href ="..\assets\icons\logo-png.png" type = "image/x-icon">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="games.css">
+    <title>PyBox - Tic-Tac-Toe </title>
+  </head>
+  <body>
+
+    <nav class="navbar static-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"><img src="..\assets\icons\logo-png.png" class="nav-logo" alt="PyBox"></a>
+        <button onclick="goBack()" class="btn btn-dark">Go Back</button>
+      </div>
+      
+    </nav>
+
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+                    <h1 class="game-title">Tic-Tac-Toe</h1>
+                    <p class="game-desc">Some text about me in culpa qui officia deserunt mollit anim..</p>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                        <a class="fa fa-2x fa-github" href="#" target="_blank" rel="noopener noreferrer"></a>
+                        </li>
+                    </ul>
+                    <hr class="d-sm-none">
+            </div>
+
+
+            <div class="col-sm-8">
+
+                  
+                   <div class="download">
+                    <h4 class="dwnld">Download</h4>
+                    <a class="btn" href="Text/tic-tac-toe.txt" download><i class="fa fa-2x fa-file"></i></a>
+                    <a class="btn" href="../Games/Tic-Tac-Toe.py" download><img src="../assets/icons/python-icon.png" alt="python-icon" class="python-icon"></i></a>
+                   </div>
+                    
+
+
+                    <!-- CODE -->
+                    <pre class="code">
+
+    <span class="comment"># import modules</span>
+    <span class="in-built">from</span> tkinter <span class="in-built">import</span> *
+    <span class="in-built">import</span> tkinter.messagebox
+
+    <span class="comment"># Create main window</span>
+    tk = <span class="function">Tk</span>()
+
+    <span class="comment"># Set window title and icon</span>
+    tk.<span class="function">title</span>("Tic Tac Toe")
+    tk.<span class="function">iconbitmap</span>("logo-ico.ico")
+
+    <span class="comment"># Player variables</span>
+    <span class="variable">pa</span> = <span class="function">StringVar</span>()
+    <span class="variable">pb</span> = <span class="function">StringVar</span>()
+    <span class="variable">p1</span> = <span class="function">StringVar</span>()
+    <span class="variable">p2</span> = <span class="function">StringVar</span>()
+
+    <span class="variable">player1_name</span> = Entry(tk, textvariable=<span class="variable">p1</span>, bd=5)
+    <span class="variable">player1_name</span>.<span class="function">grid</span>(row=1, column=1, columnspan=8)
+    <span class="variable">player2_name</span> = Entry(tk, textvariable=<span class="variable">p2</span>, bd=5)
+    <span class="variable">player2_name</span>.<span class="function">grid</span>(row=2, column=1, columnspan=8)
+
+    <span class="variable">button_click</span> = True
+    <span class="variable">flag</span> = 0
+
+        <span class="comment"># Functions</span>
+    <span class="comment"># Function to disable Buttons</span>
+    <span class="in-built">def</span> <span class="function">disableButton</span>():
+        <span class="variable"><span class="variable">B1</span></span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B2</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B3</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B4</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B5</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B6</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B7</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B8</span>.<span class="function">configure</span>(state=DISABLED)
+        <span class="variable">B9</span>.<span class="function">configure</span>(state=DISABLED)
+
+    <span class="comment"># Function to display X and O</span>
+    <span class="in-built">def</span> <span class="function">buttonClick</span>(buttons):
+        <span class="in-built">global</span> <span class="variable">button_click</span>, <span class="variable">flag</span>, <span class="variable">player2_name</span>, <span class="variable">player1_name</span>, <span class="variable">pb</span>, <span class="variable">pa</span>
+        <span class="in-built">if</span> buttons["text"] == " " and <span class="variable">button_click</span> == True:
+            buttons["text"] = "X"
+            <span class="variable">button_click</span> = False
+            <span class="variable">pb</span> = <span class="variable">p2</span>.get() + " Wins!"
+            <span class="variable">pa</span> = <span class="variable">p1</span>.get() + " Wins!"
+            <span class="function">checkForWin</span>()
+            <span class="variable">flag</span> += 1
+
+        <span class="in-built">elif</span> buttons["text"] == " " and <span class="variable">button_click</span> == False:
+            buttons["text"] = "O"
+            <span class="variable">button_click</span> = True
+            <span class="function">checkForWin</span>()
+            <span class="variable">flag</span> += 1
+        <span class="in-built">else</span>:
+            tkinter.messagebox.<span class="function">showinfo</span>("Tic-Tac-Toe", "Button already Clicked!")
+
+    <span class="comment"># Function to check WIN condition</span>
+    <span class="in-built">def</span> <span class="function">checkForWin</span>():
+        <span class="in-built">if</span> (<span class="variable"><span class="variable">B1</span></span>['text'] == 'X' and <span class="variable">B2</span>['text'] == 'X' and <span class="variable">B3</span>['text'] == 'X' or
+            <span class="variable">B4</span>['text'] == 'X' and <span class="variable">B5</span>['text'] == 'X' and <span class="variable">B6</span>['text'] == 'X' or
+            <span class="variable">B7</span>['text'] =='X' and <span class="variable">B8</span>['text'] == 'X' and <span class="variable">B9</span>['text'] == 'X' or
+            <span class="variable"><span class="variable">B1</span></span>['text'] == 'X' and <span class="variable">B5</span>['text'] == 'X' and <span class="variable">B9</span>['text'] == 'X' or
+            <span class="variable">B3</span>['text'] == 'X' and <span class="variable">B5</span>['text'] == 'X' and <span class="variable">B7</span>['text'] == 'X' or
+            <span class="variable"><span class="variable">B1</span></span>['text'] == 'X' and <span class="variable">B2</span>['text'] == 'X' and <span class="variable">B3</span>['text'] == 'X' or
+            <span class="variable"><span class="variable">B1</span></span>['text'] == 'X' and <span class="variable">B4</span>['text'] == 'X' and <span class="variable">B7</span>['text'] == 'X' or
+            <span class="variable">B2</span>['text'] == 'X' and <span class="variable">B5</span>['text'] == 'X' and <span class="variable">B8</span>['text'] == 'X' or
+            <span class="variable">B7</span>['text'] == 'X' and <span class="variable">B6</span>['text'] == 'X' and <span class="variable">B9</span>['text'] == 'X'):
+            <span class="function">disableButton</span>()
+            tkinter.messagebox.<span class="function">showinfo</span>("Tic-Tac-Toe", <span class="variable">pa</span>)
+
+        <span class="in-built">elif</span>(<span class="variable">flag</span> == 8):
+            tkinter.messagebox.<span class="function">showinfo</span>("Tic-Tac-Toe", "It is a Tie")
+
+        <span class="in-built">elif</span> (<span class="variable"><span class="variable">B1</span></span>['text'] == 'O' and <span class="variable">B2</span>['text'] == 'O' and <span class="variable">B3</span>['text'] == 'O' or
+                <span class="variable">B4</span>['text'] == 'O' and <span class="variable">B5</span>['text'] == 'O' and <span class="variable">B6</span>['text'] == 'O' or
+                <span class="variable">B7</span>['text'] == 'O' and <span class="variable">B8</span>['text'] == 'O' and <span class="variable">B9</span>['text'] == 'O' or
+                <span class="variable"><span class="variable">B1</span></span>['text'] == 'O' and <span class="variable">B5</span>['text'] == 'O' and <span class="variable">B9</span>['text'] == 'O' or
+                <span class="variable">B3</span>['text'] == 'O' and <span class="variable">B5</span>['text'] == 'O' and <span class="variable">B7</span>['text'] == 'O' or
+                <span class="variable"><span class="variable">B1</span></span>['text'] == 'O' and <span class="variable">B2</span>['text'] == 'O' and <span class="variable">B3</span>['text'] == 'O' or
+                <span class="variable"><span class="variable">B1</span></span>['text'] == 'O' and <span class="variable">B4</span>['text'] == 'O' and <span class="variable">B7</span>['text'] == 'O' or
+                <span class="variable">B2</span>['text'] == 'O' and <span class="variable">B5</span>['text'] == 'O' and <span class="variable">B8</span>['text'] == 'O' or
+                <span class="variable">B7</span>['text'] == 'O' and <span class="variable">B6</span>['text'] == 'O' and <span class="variable">B9</span>['text'] == 'O'):
+            <span class="function">disableButton</span>()
+            tkinter.messagebox.<span class="function">showinfo</span>("Tic-Tac-Toe", <span class="variable">pb</span>)
+
+
+    buttons = <span class="function">StringVar</span>()
+
+    <span class="comment"># Creating Input Label</span>
+    <span class="variable">label</span> = <span class="function">Label</span>(tk, text="Player 1:", font='Helvetica', bg='pink',
+                    fg='black', height=1, width=10)
+    <span class="variable">label</span>.<span class="function">grid</span>(row=1, column=0)
+
+    <span class="variable">label</span> = <span class="function">Label</span>(tk, text="Player 2:", font='Helvetica', bg='pink',
+                    fg='black', height=1, width=10)
+    <span class="variable">label</span>.<span class="function">grid</span>(row=2, column=0)
+
+
+
+    <span class="comment"># Creating and Styling Buttons</span>
+    <span class="variable"><span class="variable">B1</span></span> = <span class="function">Button</span>(tk, text=" ", font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable"><span class="variable">B1</span></span>))
+    <span class="variable"><span class="variable">B1</span></span>.<span class="function">grid</span>(row=3, column=0)
+
+    <span class="variable">B2</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B2</span>))
+    <span class="variable">B2</span>.<span class="function">grid</span>(row=3, column=1)
+
+    <span class="variable">B3</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B3</span>))
+    <span class="variable">B3</span>.<span class="function">grid</span>(row=3, column=2)
+
+    <span class="variable">B4</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B4</span>))
+    <span class="variable">B4</span>.<span class="function">grid</span>(row=4, column=0)
+
+    <span class="variable">B5</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B5</span>))
+    <span class="variable">B5</span>.<span class="function">grid</span>(row=4, column=1)
+
+    <span class="variable">B6</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B6</span>))
+    <span class="variable">B6</span>.<span class="function">grid</span>(row=4, column=2)
+
+    <span class="variable">B7</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B7</span>))
+    <span class="variable">B7</span>.<span class="function">grid</span>(row=5, column=0)
+
+    <span class="variable">B8</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B8</span>))
+    <span class="variable">B8</span>.<span class="function">grid</span>(row=5, column=1)
+
+    <span class="variable">B9</span> = <span class="function">Button</span>(tk, text=' ', font='Times 20 bold', bg='green', fg='yellow',
+                height=4, width=8, command=lambda: <span class="function">buttonClick</span>(<span class="variable">B9</span>))
+    <span class="variable">B9</span>.<span class="function">grid</span>(row=5, column=2)
+
+    tk.mainloop()
+
+                        </pre>
+
+                        <!-- CODE -->
+                    <br>
+
+
+
+
+
+                    <div class="images">
+                      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/tictactoe-1.PNG" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/tictactoe-2.PNG" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="buyme">
+                      
+                      <a href="https://ko-fi.com/hhhrrrttt222111" target="_blank" rel="noopener noreferrer"><span class="buy">Buy Me A Coffee</span><img src="../assets/icons/kofi.png" alt="ko-fi" class="coffee"></a>
+                    </div>  
+                  
+            </div>
+           
+          </div>
+          
+        </div>
+
+       
+        
+          <div class="footer">
+              <p class="footer-heart">
+                Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://raw.githubusercontent.com/hhhrrrttt222111/etudia/master/assets/necro.png?token=AKLVDPY75U5YNHZ7PRA4Y4K6TRB2I">
+              <img class="emoji" alt="heart" height="20" width="20" src="https://raw.githubusercontent.com/hhhrrrttt222111/etudia/master/assets/necro.png?token=AKLVDPY75U5YNHZ7PRA4Y4K6TRB2I">
+              </g-emoji> by <a href="http://hhhrrrttt222111.me/" target="_blank">HRT</a>
+              </p>
+            </div>
+    
+        
+
+
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+              </script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
