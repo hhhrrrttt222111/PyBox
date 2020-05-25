@@ -1,6 +1,11 @@
 # PyBox
 <img src="assets/icons/logo-png.png" width=60px height=60px>
 
+<br>
+
+[![GitHub forks](https://img.shields.io/github/forks/hhhrrrttt222111/PyBox?color=red&style=plastic)](https://github.com/hhhrrrttt222111/PyBox/network)
+[![GitHub stars](https://img.shields.io/github/stars/hhhrrrttt222111/PyBox?color=green&style=plastic)](https://github.com/hhhrrrttt222111/PyBox/stargazers)
+
 
 #### PyBox provides you with a compilation of many such Python games, serving as a platform to, simply put, have fun. Ranging from pen and paper games like Tic Tac Toe to watered down and modified versions of popular classic arcade games like Snake, Flappy bird and Pong, we have a game for everybody to play.
 #### PyBox was created with a simple aim. To chase away boredom using simple games designed in Python. Here you can find some of your favorite games to play in your pastime.
