@@ -76,10 +76,10 @@
     # Player with first 4-in-a-row wins!
 
     # import modules </span>
-    import numpy as np
-    import pygame
-    import sys
-    import math
+    <span class="in-built">import</span> numpy as np
+    <span class="in-built">import</span> pygame
+    <span class="in-built">import</span> sys
+    <span class="in-built">import</span> math
 
     <span class="variable">icon</span> = pygame.image.<span class="function">load</span>('logo-ico.ico')
     pygame.display.<span class="function">set_icon</span>(<span class="variable">icon</span>)
@@ -98,7 +98,7 @@
     <span class="comment">#   Functions</span>
     <span class="in-built">def</span> <span class="function">create_board</span>():
     <span class="variable">board</span> = np.zeros((<span class="variable">ROW_COUNT</span>, <span class="variable">COLUMN_COUNT</span>))
-    return <span class="variable">board</span>
+    <span class="in-built">return</span> <span class="variable">board</span>
 
 
     <span class="in-built">def</span> <span class="function">drop_piece</span>(<span class="variable">board</span>, row, <span class="variable">col</span>, piece):
@@ -106,13 +106,13 @@
 
 
     <span class="in-built">def</span> <span class="function">is_valid_location</span>(<span class="variable">board</span>, <span class="variable">col</span>):
-    return <span class="variable">board</span>[<span class="variable">ROW_COUNT</span> - 1][<span class="variable">col</span>] == 0
+    <span class="in-built">return</span> <span class="variable">board</span>[<span class="variable">ROW_COUNT</span> - 1][<span class="variable">col</span>] == 0
 
 
     <span class="in-built">def</span> <span class="function">get_next_open_row</span>(<span class="variable">board</span>, <span class="variable">col</span>):
     <span class="in-built">for</span> r <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">ROW_COUNT</span>):
     <span class="in-built">if</span> <span class="variable">board</span>[r][<span class="variable">col</span>] == 0:
-    return r
+    <span class="in-built">return</span> r
 
 
     <span class="in-built">def</span> <span class="function">print_board</span>(<span class="variable">board</span>):
@@ -125,28 +125,28 @@
     <span class="in-built">for</span> r <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">ROW_COUNT</span>):
     <span class="in-built">if</span> <span class="variable">board</span>[r][c] == piece and <span class="variable">board</span>[r][c + 1] == piece and <span class="variable">board</span>[r][c + 2] == piece and <span class="variable">board</span>[r][
         c + 3] == piece:
-        return True
+        <span class="in-built">return</span> True
 
     <span class="comment"># Check vertical locations for win</span>
     <span class="in-built">for</span> c <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">COLUMN_COUNT</span>):
     <span class="in-built">for</span> r <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">ROW_COUNT</span> - 3):
     <span class="in-built">if</span> <span class="variable">board</span>[r][c] == piece and <span class="variable">board</span>[r + 1][c] == piece and <span class="variable">board</span>[r + 2][c] == piece and <span class="variable">board</span>[r + 3][
         c] == piece:
-        return True
+        <span class="in-built">return</span> True
 
     <span class="comment"># Check positively sloped diaganols</span>
     <span class="in-built">for</span> c <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">COLUMN_COUNT</span> - 3):
     <span class="in-built">for</span> r <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">ROW_COUNT</span> - 3):
     <span class="in-built">if</span> <span class="variable">board</span>[r][c] == piece and <span class="variable">board</span>[r + 1][c + 1] == piece and <span class="variable">board</span>[r + 2][c + 2] == piece and <span class="variable">board</span>[r + 3][
         c + 3] == piece:
-        return True
+        <span class="in-built">return</span> True
 
     <span class="comment"># Check negatively sloped diaganols</span>
     <span class="in-built">for</span> c <span class="in-built">in</span> <span class="function">range</span>(<span class="variable">COLUMN_COUNT</span> - 3):
     <span class="in-built">for</span> r <span class="in-built">in</span> <span class="function">range</span>(3, <span class="variable">ROW_COUNT</span>):
     <span class="in-built">if</span> <span class="variable">board</span>[r][c] == piece and <span class="variable">board</span>[r - 1][c + 1] == piece and <span class="variable">board</span>[r - 2][c + 2] == piece and <span class="variable">board</span>[r - 3][
         c + 3] == piece:
-        return True
+        <span class="in-built">return</span> True
 
 
     <span class="in-built">def</span> <span class="function">draw_board</span>(<span class="variable">board</span>):
@@ -189,7 +189,7 @@
 
     myfont = pygame.font.<span class="function">SysFont</span>("monospace", 75)
 
-    while not <span class="variable">game_over</span>:
+    <span class="in-built">while</span> not <span class="variable">game_over</span>:
 
     <span class="in-built">for</span> event <span class="in-built"><span class="in-built">in</span></span> pygame.event.<span class="function">get</span>():
     <span class="in-built">if</span> event.type == pygame.QUIT:
@@ -225,7 +225,7 @@
 
 
     <span class="comment"># Ask for Player 2 Input</span>
-    else:
+    <span class="in-built">else</span>::
         <span class="variable">posx</span> = event.pos[0]
         <span class="variable">col</span> = int(math.floor(<span class="variable">posx</span> / <span class="variable">SQUARESIZE</span>))
 

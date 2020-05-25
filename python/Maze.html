@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="games.css">
-    <title>PyBox - Cannon Fire</title>
+    <title>PyBox - Maze</title>
   </head>
   <body>
 
@@ -40,7 +40,7 @@
         <div class="container">
           <div class="row">
             <div class="col-sm-4">
-                    <h1 class="game-title">Cannon Fire</h1>
+                    <h1 class="game-title">Maze</h1>
                     <p class="game-desc">Some text about me in culpa qui officia deserunt mollit anim..</p>
                     <ul class="nav nav-pills flex-column">
                         <li class="nav-item">
@@ -56,102 +56,65 @@
                   
                    <div class="download">
                     <h4 class="dwnld">Download</h4>
-                    <a class="btn" href="Text/Cannon-Fire.txt" download><i class="fa fa-2x fa-file"></i></a>
-                    <a class="btn" href="../Games/Cannon.py" download><img src="../assets/icons/python-icon.png" alt="python-icon" class="python-icon"></i></a>
+                    <a class="btn" href="Text/Maze.txt" download><i class="fa fa-2x fa-file"></i></a>
+                    <a class="btn" href="../Games/Maze.py" download><img src="../assets/icons/python-icon.png" alt="python-icon" class="python-icon"></i></a>
                    </div>
                     
 
 
                     <!-- CODE -->
                     <pre class="code">
-                        
-  <span class="comment"># This game is from the official documentation of freegames
-  # https://pypi.org/project/freegames/
+                        <span class="comment">
+    # This game is from the official documentation of freegames
+    # https://pypi.org/project/freegames/
 
-  # pip install freegames
+    # pip install freegames
 
-  # Tap on Screen to Fire
+    # import modules  </span>
+    <span class="in-built">import</span> turtle as t
+    <span class="in-built">from</span> <span class="function">random</span> <span class="in-built">import</span> <span class="function">random</span>
+    <span class="in-built">from</span> freegames <span class="in-built">import</span> <span class="function">line</span>
 
-  # import modules </span> 
-  <span class="in-built">from</span> random <span class="in-built">import</span> <span class="function">randrange</span>
-  <span class="in-built">import</span> turtle as t
-  <span class="in-built">from</span> freegames import <span class="function">vector</span>
+    <span class="comment"># Set window title, color and icon</span>
+    t.<span class="function">title</span>("Maze")
+    <span class="variable">root</span> = t.<span class="function">Screen</span>()._root
+    <span class="variable">root</span>.<span class="function">iconbitmap</span>("logo-ico.ico")
+    t.<span class="function">bgcolor </span>('#b3ffe6')
 
-  <span class="comment"># Set window title, color and icon</span>
-  t.<span class="function">title</span>("Canon Fire")
-  <span class="variable">root</span> = t.<span class="function">Screen</span>()._root
-  <span class="variable">root</span>.<span class="function">iconbitmap</span>("logo-ico.ico")
-  t.<span class="function">bgcolor</span>('#99ffbb')
+    <span class="comment">
+    #   Functions
+    # Draw maze  </span>
+    <span class="in-built">def</span> <span class="function">draw</span>():
+        t.<span class="function">color</span>('black')
+        t.<span class="function">width</span>(5)
 
-  <span class="variable">ball</span> = <span class="function">vector</span>(-200, -200)
-  <span class="variable">speed</span> = <span class="function">vector</span>(0, 0)
-  <span class="variable">targets</span> = []
+        <span class="in-built">for</span> x <span class="in-built">in </span><span class="function">range</span>(-200, 200, 40):
+            <span class="in-built">for</span> y <span class="in-built">in </span><span class="function">range</span>(-200, 200, 40):
+                <span class="in-built">if</span> <span class="function">random</span>() > 0.5:
+                    <span class="function">line</span>(x, y, x + 40, y + 40)
+                <span class="in-built">else</span>:
+                    <span class="function">line</span>(x, y + 40, x + 40, y)
 
-      <span class="comment">
-      # Functions
-      # Respond to screen tap
-      </span>
-  <span class="in-built">def</span> <span class="function">tap</span>(x, y):
-      <span class="in-built">if</span> not <span class="function">inside</span>(<span class="variable">ball</span>):
-          <span class="variable">ball</span>.x = -199
-          <span class="variable">ball</span>.y = -199
-          <span class="variable">speed</span>.x = (x + 200) / 25
-          <span class="variable">speed</span>.y = (y + 200) / 25
+        t.<span class="function">update</span>()
 
-  <span class="comment"># Return True if xy within screen</span>
-  <span class="in-built">def</span> <span class="function">inside</span>(xy):
-      return -200 < xy.x < 200 and -200 < xy.y < 200
+    <span class="comment"># Draw line and dot for screen tap</span>
+    <span class="in-built">def</span> <span class="function">tap</span>(x, y):
+        <span class="in-built">if</span> <span class="function">abs</span>(x) > 198 or <span class="function">abs</span>(y) > 198:
+            t.<span class="function">up</span>()
+        <span class="in-built">else</span>:
+            t.<span class="function">down</span>()
 
-  <span class="comment"># Draw ball and targets</span>
-  <span class="in-built">def</span> <span class="function">draw</span>():
-      t.<span class="function">clear</span>()
+        t.<span class="function">width</span>(2)
+        t.<span class="function">color</span>('red')
+        t.<span class="function">goto</span>(x, y)
+        t.<span class="function">dot</span>(4)
 
-      <span class="in-built">for</span> <span class="variable">target</span> <span class="in-built">in</span> <span class="variable">targets</span>:
-          t.<span class="function">goto</span>(<span class="variable">target</span>.x, <span class="variable">target</span>.y)
-          t.<span class="function">dot</span>(20, '#8000ff')
-
-      <span class="in-built">if</span> <span class="function">inside</span>(<span class="variable">ball</span>):
-          t.<span class="function">goto</span>(<span class="variable">ball</span>.x, <span class="variable">ball</span>.y)
-          t.<span class="function">dot</span>(6, '#cc0000')
-
-      t.<span class="function">update</span>()
-
-  <span class="comment">#  Move ball and <span class="variable">targets</span></span>
-  <span class="in-built">def</span> <span class="function">Screen</span>():
-      <span class="in-built">if</span> <span class="function">randrange</span>(40) == 0:
-          y = <span class="function">randrange</span>(-150, 150)
-          <span class="variable">target</span> = <span class="function">vector</span>(200, y)
-          <span class="variable">targets</span>.append(<span class="variable">target</span>)
-
-      <span class="in-built">for</span> <span class="variable">target</span> <span class="in-built">in</span> targets:
-          <span class="variable">target</span>.x -= 0.5
-
-      <span class="in-built">if</span> <span class="function">inside</span>(<span class="variable">ball</span>):
-          <span class="variable">speed</span>.y -= 0.35
-          <span class="variable">ball</span>.<span class="function">Screen</span>(<span class="variable">speed</span>)
-
-      dupe = <span class="variable">targets</span>.copy()
-      <span class="variable">targets</span>.<span class="function">clear</span>()
-
-      <span class="in-built">for</span> <span class="variable">target</span> <span class="in-built">in</span> dupe:
-          <span class="in-built">if</span> abs(<span class="variable">target</span> - <span class="variable">ball</span>) > 13:
-              <span class="variable">targets</span>.append(<span class="variable">target</span>)
-
-      <span class="function">draw</span>()
-
-      <span class="in-built">for</span> <span class="variable">target</span> <span class="in-built">in</span> <span class="variable">targets</span>:
-          <span class="in-built">if</span> not <span class="function">inside</span>(<span class="variable">target</span>):
-              return
-
-      t.<span class="function">ontimer</span>(<span class="function">Screen</span>, 50)
-
-  t.<span class="function">setup</span>(420, 420, 370, 0)
-  t.<span class="function">hideturtle</span>()
-  t.<span class="function">up</span>()
-  t.<span class="function">tracer</span>(False)
-  t.<span class="function">onscreenclick</span>(<span class="function">tap</span>)
-  <span class="function">Screen</span>()
-  t.<span class="function">done</span>()
+    t.<span class="function">setup</span>(420, 420, 370, 0)
+    t.<span class="function">hideturtle</span>()
+    t.<span class="function">tracer</span>(False)
+    <span class="function">draw</span>()
+    t.<span class="function">onscreenclick</span>(tap)
+    t.<span class="function">done</span>()
 
                         </pre>
 
@@ -171,10 +134,10 @@
                         </ol>
                         <div class="carousel-inner">
                           <div class="carousel-item active">
-                            <img src="img/cannon-1.PNG" class="d-block w-100" alt="...">
+                            <img src="img/Maze-1.PNG" class="d-block w-100" alt="...">
                           </div>
                           <div class="carousel-item">
-                            <img src="img/cannon-2.PNG" class="d-block w-100" alt="...">
+                            <img src="img/Maze-2.PNG" class="d-block w-100" alt="...">
                           </div>
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
