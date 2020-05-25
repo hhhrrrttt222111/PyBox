@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:title" content="PyBox - Python Games">
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="Python Games to increase your skill and experience in Python">
+<!--     <meta property="og:image" content="">
+    <meta property="og:url" content=""> -->
+
+    <meta name="twitter:title" content="PyBox - Python Games">
+    <meta name="twitter:site" content="@hhhrrrttt222111">
+    <meta name="twitter:creator" content="@hhhrrrttt222111">
+    <meta name="twitter:description" content="Python Games to increase your skill and experience in Python">
+
+    
+    <link rel = "icon" href ="..\assets\icons\logo-png.png" type = "image/x-icon">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" 
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="games.css">
+    <title>PyBox - Egg Catcher</title>
+  </head>
+  <body>
+
+    <nav class="navbar static-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html"><img src="..\assets\icons\logo-png.png" class="nav-logo" alt="PyBox"></a>
+        <button onclick="goBack()" class="btn btn-dark">Go Back</button>
+      </div>
+      
+    </nav>
+
+        
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-4">
+                    <h1 class="game-title">Egg Catcher</h1>
+                    <p class="game-desc">Some text about me in culpa qui officia deserunt mollit anim..</p>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                        <a class="fa fa-2x fa-github" href="#" target="_blank" rel="noopener noreferrer"></a>
+                        </li>
+                    </ul>
+                    <hr class="d-sm-none">
+            </div>
+
+
+            <div class="col-sm-8">
+
+                  
+                   <div class="download">
+                    <h4 class="dwnld">Download</h4>
+                    <a class="btn" href="Text/egg catcher.txt" download><i class="fa fa-2x fa-file"></i></a>
+                    <a class="btn" href="../Games/Egg-Catcher.py" download><img src="../assets/icons/python-icon.png" alt="python-icon" class="python-icon"></i></a>
+                   </div>
+                    
+
+
+                    <!-- CODE -->
+                    <pre class="code">
+                        
+    <span class="comment"># import modules</span>
+    <span class="in-built"><span class="in-built">from</span></span> itertools <span class="in-built">import</span> cycle
+    <span class="in-built"><span class="in-built">from</span></span> random <span class="in-built">import</span> <span class="function">randrange</span>
+    <span class="in-built"><span class="in-built">from</span></span> tkinter <span class="in-built">import</span> *
+    <span class="in-built"><span class="in-built">from</span></span> tkinter <span class="in-built">import</span> messagebox
+
+
+    <span class="comment"># Set Canvas Size</span>
+    <span class="variable">window_width</span> = 800
+    <span class="variable">window_height</span> = 400
+
+    <span class="comment"># Create main window</span>
+    <span class="variable">tk</span> = Tk()
+
+    <span class="comment"># Set window title and icon</span>
+    <span class="variable">tk</span>.title("Egg Catcher")
+    <span class="variable">tk</span>.iconbitmap("logo-ico.ico")
+
+    <span class="comment"># Create Canvas</span>
+    c = Canvas(<span class="variable">tk</span>, width=<span class="variable">window_width</span>, height=<span class="variable">window_height</span>, background='#00cccc')
+    c.create_rectangle(-5, <span class="variable">window_height</span> - 100, <span class="variable">window_width</span> + 5,
+                        <span class="variable">window_height</span> + 5, fill='#00cc00', width=0)
+    c.create_oval(-80, -80, 120, 120, fill='#ffcc00', width=0)
+    c.pack()
+
+    <span class="comment"># Declare Variables</span>
+    <span class="variable">color_cycle</span> = cycle(['#ff4d4d', '#ff66cc', '#80ff80', '#ff9966', '#ffff66', '#aa80ff', '#00e64d'])
+    <span class="variable">egg_width</span> = 45
+    <span class="variable">egg_height</span> = 55
+    <span class="variable">egg_score</span> = 10
+    <span class="variable">egg_speed</span> = 500
+    <span class="variable">egg_interval</span> = 4000
+    <span class="variable">difficulty_factor</span> = 0.95
+    <span class="variable">catcher_color</span> = '#ff0000'
+    <span class="variable">catcher_width</span> = 100
+    <span class="variable">catcher_height</span> = 100
+    <span class="variable">catcher_start_x</span> = <span class="variable">window_width</span> / 2 - <span class="variable">catcher_width</span> / 2
+    <span class="variable">catcher_start_y</span> = <span class="variable">window_height</span> - <span class="variable">catcher_height</span> - 20
+    <span class="variable">catcher_start_x2</span> = <span class="variable">catcher_start_x</span> + <span class="variable">catcher_width</span>
+    <span class="variable">catcher_start_y2</span> = <span class="variable">catcher_start_y</span> + <span class="variable">catcher_height</span>
+
+    <span class="variable">catcher</span> = c.<span class="function">create_arc</span>(<span class="variable">catcher_start_x</span>, <span class="variable">catcher_start_y</span>, <span class="variable">catcher_start_x2</span>, <span class="variable">catcher_start_y2</span>,
+                            start=200, extent=140, style='arc', outline=<span class="variable">catcher_color</span>, width=8)
+
+    <span class="variable">score</span> = 0
+    <span class="variable">score_text</span> = c.<span class="function">create_text</span>(10, 10, anchor='nw', font=('Arial', 16, 'bold'),
+                                fill='#000000', text='Score : ' + str(<span class="variable">score</span>))
+
+    <span class="variable">lives_remaining</span> = 3
+    <span class="variable">lives_text</span> = c.<span class="function">create_text</span>(<span class="variable">window_width</span>-10, 10, anchor='ne', font=('Arial', 16, 'bold'),
+                                fill='#000000', text='Lives : ' + str(<span class="variable">lives_remaining</span>))
+
+    <span class="variable">eggs</span> = []
+
+    <span class="comment">  # Functions
+    # Function to Drop Eggs  </span>
+    <span class="in-built">def</span> <span class="function">create_eggs</span>():
+        x = <span class="function">randrange</span>(10, 740)
+        y = 40
+        <span class="variable">new_egg</span> = c.create_oval(x, y, x+<span class="variable">egg_width</span>, y+<span class="variable">egg_height</span>, fill=next(<span class="variable">color_cycle</span>), width=0)
+        <span class="variable">eggs</span>.append(<span class="variable">new_egg</span>)
+        <span class="variable">tk</span>.<span class="function">after</span>(<span class="variable">egg_interval</span>, <span class="function">create_eggs</span>)
+
+    <span class="comment"># Function to Move Eggs</span>
+    <span class="in-built">def</span> <span class="function">move_eggs</span>():
+        for egg in <span class="variable">eggs</span>:
+            (egg_x, egg_y, egg_x2, egg_y2) = c.coords(egg)
+            c.move(egg,0,10)
+            <span class="in-built">if</span> egg_y2 > <span class="variable">window_height</span>:
+                <span class="function">egg_dropped</span>(egg)
+        <span class="variable">tk</span>.<span class="function">after</span>(<span class="variable">egg_speed</span>, <span class="function">move_eggs</span>)
+
+    <span class="comment"># Function to Check Dropped Egg</span>
+    <span class="in-built">def</span> <span class="function">egg_dropped</span>(egg):
+        <span class="variable">eggs</span>.remove(egg)
+        c.delete(egg)
+        <span class="function">lose_a_life</span>()
+        <span class="in-built">if</span> <span class="variable">lives_remaining</span> == 0:
+            messagebox.showinfo('GAME OVER!', 'Final Score : ' + str(<span class="variable">score</span>))
+            <span class="variable">tk</span>.destroy()
+
+    <span class="comment"># Function to reduce Life</span>
+    <span class="in-built">def</span> <span class="function">lose_a_life</span>():
+        <span class="in-built">global</span> <span class="variable">lives_remaining</span>
+        <span class="variable">lives_remaining</span> -= 1
+        c.<span class="function">itemconfigure</span>(<span class="variable">lives_text</span>, text='Lives : ' + str(<span class="variable">lives_remaining</span>))
+
+    <span class="comment"># Function to check Catch</span>
+    <span class="in-built">def</span> <span class="function">catch_check</span>():
+        (catcher_x, catcher_y, catcher_x2, catcher_y2) = c.coords(<span class="variable">catcher</span>)
+        for egg in <span class="variable">eggs</span>:
+            (egg_x, egg_y, egg_x2, egg_y2) = c.coords(egg)
+            <span class="in-built">if</span> catcher_x < egg_x and egg_x2 < catcher_x2 and catcher_y2 - egg_y2 < 40:
+                <span class="variable">eggs</span>.remove(egg)
+                c.delete(egg)
+                <span class="function">increase_score</span>(<span class="variable">egg_score</span>)
+        <span class="variable">tk</span>.<span class="function">after</span>(100, <span class="function">catch_check</span>)
+
+    <span class="comment"># Function to increase Score</span>
+    <span class="in-built">def</span> <span class="function">increase_score</span>(points):
+        <span class="in-built">global</span> <span class="variable">score</span>, <span class="variable">egg_speed</span>, <span class="variable">egg_interval</span>
+        <span class="variable">score</span> += points
+        <span class="variable">egg_speed</span> = int(<span class="variable">egg_speed</span> * <span class="variable">difficulty_factor</span>)
+        <span class="variable">egg_interval</span> = int(<span class="variable">egg_interval</span> * <span class="variable">difficulty_factor</span>)
+        c.<span class="function">itemconfigure</span>(<span class="variable">score_text</span>, text='Score : ' + str(<span class="variable">score</span>))
+
+    <span class="comment"># Functions to move tray Left and Right</span>
+    <span class="in-built">def</span> <span class="function">move_left</span>(event):
+        (x1, y1, x2, y2) = c.coords(<span class="variable">catcher</span>)
+        <span class="in-built">if</span> x1 > 0:
+            c.move(<span class="variable">catcher</span>, -20, 0)
+
+    <span class="in-built">def</span> <span class="function">move_right</span>(event):
+        (x1, y1, x2, y2) = c.coords(<span class="variable">catcher</span>)
+        <span class="in-built">if</span> x2 < <span class="variable">window_width</span>:
+            c.move(<span class="variable">catcher</span>, 20, 0)
+
+
+    c.bind('<Left>', <span class="function">move_left</span>)
+    c.bind('<Right>', <span class="function">move_right</span>)
+    c.focus_set()
+
+    <span class="variable">tk</span>.<span class="function">after</span>(1000, <span class="function">create_eggs</span>)
+    <span class="variable">tk</span>.<span class="function">after</span>(1000, <span class="function">move_eggs</span>)
+    <span class="variable">tk</span>.<span class="function">after</span>(1000, <span class="function">catch_check</span>)
+
+    <span class="variable">tk</span>.<span class="function">mainloop</span>()
+
+
+                        </pre>
+
+                        <!-- CODE -->
+                    <br>
+
+
+
+
+
+                    <div class="images">
+                      <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+
+                        </ol>
+                        <div class="carousel-inner">
+                          <div class="carousel-item active">
+                            <img src="img/egg-catcher-0.PNG" class="d-block w-100" alt="...">
+                          </div>
+                          <div class="carousel-item">
+                            <img src="img/egg-catcher-1.PNG" class="d-block w-100" alt="...">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                      </div>
+                    </div>
+
+
+
+
+                    <div class="buyme">
+                      
+                      <a href="https://ko-fi.com/hhhrrrttt222111" target="_blank" rel="noopener noreferrer"><span class="buy">Buy Me A Coffee</span><img src="../assets/icons/kofi.png" alt="ko-fi" class="coffee"></a>
+                    </div>  
+                  
+            </div>
+           
+          </div>
+          
+        </div>
+
+       
+        
+          <div class="footer">
+              <p class="footer-heart">
+                Made with <g-emoji class="g-emoji" alias="heart" fallback-src="https://raw.githubusercontent.com/hhhrrrttt222111/etudia/master/assets/necro.png?token=AKLVDPY75U5YNHZ7PRA4Y4K6TRB2I">
+              <img class="emoji" alt="heart" height="20" width="20" src="https://raw.githubusercontent.com/hhhrrrttt222111/etudia/master/assets/necro.png?token=AKLVDPY75U5YNHZ7PRA4Y4K6TRB2I">
+              </g-emoji> by <a href="http://hhhrrrttt222111.me/" target="_blank">HRT</a>
+              </p>
+            </div>
+    
+        
+
+
+            <script>
+              function goBack() {
+                window.history.back();
+              }
+              </script> 
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" 
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" 
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
