@@ -49,6 +49,16 @@ background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
     padding-left: 10px;
 }
 
+.nav-pills {
+    padding-top: 10px;
+}
+
+.git-star {
+    bottom: 7px;
+    position: relative;
+    padding-left: 20px;
+}
+
 .python-icon {
     height: 38px;
     width: 38px;
