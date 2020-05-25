@@ -7,22 +7,22 @@
 <br>
 
 ## Games
-* ### [Flappy Ball](https://hhhrrrttt222111.github.io/Python-Games/python/Flappy.html) 
-* ### [Tile 15](https://hhhrrrttt222111.github.io/Python-Games/python/Tile-15.html)
-* ### [Tic-Tac-Toe](https://hhhrrrttt222111.github.io/Python-Games/python/Tic-Tac-Toe.html)
-* ### [Canon Fire](https://hhhrrrttt222111.github.io/Python-Games/python/Cannon-Fire.html)
-* ### [Connect 4](https://hhhrrrttt222111.github.io/Python-Games/python/Connect-Four.html)
-* ### [Snake](https://hhhrrrttt222111.github.io/Python-Games/python/Snake.html)
-* ### [Maze](https://hhhrrrttt222111.github.io/Python-Games/python/Maze.html)
-* ### [Tetris](https://hhhrrrttt222111.github.io/Python-Games/python/Tetris.html)
-* ### [Guessing Number](https://hhhrrrttt222111.github.io/Python-Games/python/Guessing-Number.html)
-* ### [Pacman](https://hhhrrrttt222111.github.io/Python-Games/python/Pacman.html)
-* ### [Hangman](https://hhhrrrttt222111.github.io/Python-Games/python/Hangman.html)
-* ### [Egg Catcher](https://hhhrrrttt222111.github.io/Python-Games/python/Egg-Catcher.html)
-* ### [Tron](https://hhhrrrttt222111.github.io/Python-Games/python/Tron.html)
-* ### [Pong](https://hhhrrrttt222111.github.io/Python-Games/python/Pong.html)
-* ### [Catch The Ball](https://hhhrrrttt222111.github.io/Python-Games/python/Catch-The-Ball.html)
-* ### [Matchmaker](https://hhhrrrttt222111.github.io/Python-Games/python/Matchmaker.html)
+* ### [Flappy Ball](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Flappy.py) 
+* ### [Tile 15](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Tile15.py)
+* ### [Tic-Tac-Toe](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Tic-Tac-Toe.py)
+* ### [Canon Fire](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Cannon.py)
+* ### [Connect 4](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Connect4.py)
+* ### [Snake](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Snake.py)
+* ### [Maze](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Maze.py)
+* ### [Tetris](https://hhhrrrttt222111.github.io/Python-Games/python/Tetris.py)
+* ### [Guessing Number](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Guessing-Number.py)
+* ### [Pacman](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Pacman.py)
+* ### [Hangman](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Hangman.py)
+* ### [Egg Catcher](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Egg-Catcher.py)
+* ### [Tron](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Tron.py)
+* ### [Pong](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Pong.py)
+* ### [Catch The Ball](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Catch-The-Ball.py)
+* ### [Matchmaker](https://github.com/hhhrrrttt222111/PyBox/blob/master/Games/Matchmaker.py)
 
 <br><br>
 
