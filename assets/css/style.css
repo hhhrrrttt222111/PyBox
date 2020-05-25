@@ -32,6 +32,46 @@ html {
     right: 40px;
 }
 
+
+.btn-secondary {
+  z-index: 1;
+  color: black;
+  background-color: #006633;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.btn-secondary:hover {
+  color: #006633;
+  background-color: black;
+}
+
+.modal-title {
+  font-size: 22px;
+  font-weight: 800;
+}
+
+.modal-content {
+  background: linear-gradient(315deg, #63d471 100%, #233329 50%);
+  opacity: 0.8;
+  font-size: 18px;
+  font-weight: 500;
+  border: none;
+}
+.modal-footer {
+  border: none;
+}
+
+.modal-header {
+  border: none;
+}
+
+.modal-hrt, .modal-hrt:hover, .modal-hrt:focus, .modal-hrt:visited {
+  text-decoration: none;
+  color: black;
+
+}
+
 .btn-danger {
   z-index: 1;
   transition: all 0.3s ease 0s;
