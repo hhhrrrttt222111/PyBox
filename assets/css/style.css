@@ -78,7 +78,7 @@ html {
   color: black;
   background-color: #006633;
   border-radius: 20px;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 500;
 }
   
@@ -147,7 +147,7 @@ html {
 .display-4 {
   font-family: 'VT323', monospace;
   color: #b0bec5;
-  font-size: 80px;
+  font-size: 81px;
   font-weight: 400;
 }
 
@@ -244,7 +244,7 @@ a, a:hover, a:focus, a:active {
     width: 60px;
   }
   .fa-github, .fa-github:hover, .fa-github:focus {
-    font-size: 40px;
+    font-size: 41px;
     top: 30px;
     right: 30px;
   }
