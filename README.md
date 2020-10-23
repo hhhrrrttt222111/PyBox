@@ -28,6 +28,7 @@
 * ### [Pong](https://hhhrrrttt222111.github.io/PyBox/python/Pong.html)
 * ### [Catch The Ball](https://hhhrrrttt222111.github.io/PyBox/python/Catch-The-Ball.html)
 * ### [Matchmaker](https://hhhrrrttt222111.github.io/PyBox/python/Matchmaker.html)
+* ### [Simon Says](https://hhhrrrttt222111.github.io/PyBox/python/Simon-Says.html) :new:
 
 <br><br>
 
