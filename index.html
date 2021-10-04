@@ -32,7 +32,47 @@
     integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="assets\css\style.css">
     
-
+    <style>
+      .button {
+        border-radius: 4px;
+        background-color: #204b1f;
+        border: none;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 28px;
+        padding: 20px;
+        width: 318px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+      }
+      
+      .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      .button:hover span {
+        padding-right: 25px;
+      }
+      
+      .button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+      </style>
+    
     <title>PyBox</title>
   </head>
   <body>
@@ -119,135 +159,101 @@
             <div class="card-deck">
                   <div class="card">
                     <a href="python/Flappy.html" rel="noopener noreferrer"><img src="assets\images\flappy-ball.jpg" class="card-image"></a>
-                    <div class="card-body">
-                      <a href="python/Flappy.html" rel="noopener noreferrer"><h5 class="card-title">Flappy Ball</h5></a>
-                    </div>
+                    
+                      <a href="python/Flappy.html" rel="noopener noreferrer"><button class="button" ><span>Flappy Ball</a></span></button>
+                    
                   </div>
                   <div class="card">
                     <a href="python/Tile-15.html" rel="noopener noreferrer"><img src="assets\images\tile-15.png" class="card-image"></a>
-                    <div class="card-body">
-                      <a href="python/Tile-15.html" rel="noopener noreferrer"><h5 class="card-title">Tile 15</h5></a>
-                    </div>
+                    <a href="python/Tile-15.html" rel="noopener noreferrer"><button class="button" ><span>Title 15</a></span></button>
                   </div>    
             </div> 
             
             <div class="card-deck">
               <div class="card">
                 <a href="python/Tic-Tac-Toe.html" rel="noopener noreferrer"><img src="assets\images\tic-tac-toe.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Tic-Tac-Toe.html" rel="noopener noreferrer"><h5 class="card-title">Tic-Tac-Toe</h5></a>
-                </div>
+                <a href="python/Tic-Tac-Toe.html" rel="noopener noreferrer"><button class="button" ><span>Tic-Tac-Toe</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Cannon-Fire.html" rel="noopener noreferrer"><img src="assets\images\cannon-fire.jpg" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Cannon-Fire.html" rel="noopener noreferrer"><h5 class="card-title">Cannon Fire</h5></a>
-                </div>
+                <a href="python/Cannon-Fire.html" rel="noopener noreferrer"><button class="button" ><span>Cannon-Fire</a></span></button>
               </div>    
             </div> 
 
             <div class="card-deck">
               <div class="card">
                 <a href="python/Connect-Four.html" rel="noopener noreferrer"><img src="assets\images\connect-4.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Connect-Four.html" rel="noopener noreferrer"><h5 class="card-title">Connect 4</h5></a>
-                </div>
+                <a href="python/Connect-Four.html" rel="noopener noreferrer"><button class="button" ><span>connect-4</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Snake.html" rel="noopener noreferrer"><img src="assets\images\snake.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Snake.html" rel="noopener noreferrer"><h5 class="card-title">Snake</h5></a>
-                </div>
+                <a href="python/Snake.html" rel="noopener noreferrer"><button class="button" ><span>Snake</a></span></button>
               </div>    
             </div> 
         
             <div class="card-deck">
               <div class="card">
                 <a href="python/Maze.html" rel="noopener noreferrer"><img src="assets\images\maze.webp" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Maze.html" rel="noopener noreferrer"><h5 class="card-title">Maze</h5></a>
-                </div>
+                <a href="python/Maze.html" rel="noopener noreferrer"><button class="button" ><span>maze</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Tetris.html" rel="noopener noreferrer"><img src="assets\images\tetris.jpg" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Tetris.html" rel="noopener noreferrer"><h5 class="card-title">Tetris</h5></a>
-                </div>
+                <a href="python/Tetris.html" rel="noopener noreferrer"><button class="button" ><span>Tetris</a></span></button>
               </div>    
             </div> 
 
             <div class="card-deck">
               <div class="card">
                 <a href="python/Pacman.html" rel="noopener noreferrer"><img src="assets\images\pacman.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Pacman.html" rel="noopener noreferrer"><h5 class="card-title">Pacman</h5></a>
-                </div>
+                <a href="python/Pacman.html" rel="noopener noreferrer"><button class="button" ><span>pacman</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Guessing-Number.html" rel="noopener noreferrer"><img src="assets\images\guessnum.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Guessing-Number.html" rel="noopener noreferrer"><h5 class="card-title">Guessing Number</h5></a>
-                </div>
+                <a href="python/Guessing-Number.html" rel="noopener noreferrer"><button class="button" ><span>Guessing-Number</a></span></button>
               </div>    
             </div> 
 
             <div class="card-deck">
               <div class="card">
                 <a href="python/Egg-Catcher.html" rel="noopener noreferrer"><img src="assets\images\egg-catcher.jpg" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Egg-Catcher.html" rel="noopener noreferrer"><h5 class="card-title">Egg Catcher</h5></a>
-                </div>
+                <a href="python/Egg-Catcher.html" rel="noopener noreferrer"><button class="button" ><span>Egg-Catcher</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Hangman.html" rel="noopener noreferrer"><img src="assets\images\hangman.jpg" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Hangman.html" rel="noopener noreferrer"><h5 class="card-title">Hangman</h5></a>
-                </div>
+                <a href="python/Hangman.html" rel="noopener noreferrer"><button class="button" ><span>Hangman</a></span></button>
               </div>    
             </div> 
             
             <div class="card-deck">
               <div class="card">
                 <a href="python/Pong.html" rel="noopener noreferrer"><img src="assets\images\pong.jpg" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Pong.html" rel="noopener noreferrer"><h5 class="card-title">Pong</h5></a>
-                </div>
+                <a href="python/Pong.html" rel="noopener noreferrer"><button class="button" ><span>Pong</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Tron.html" rel="noopener noreferrer"><img src="assets\images\tron.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Tron.html" rel="noopener noreferrer"><h5 class="card-title">Tron</h5></a>
-                </div>
+                <a href="python/Tron.html" rel="noopener noreferrer"><button class="button" ><span>Tron</a></span></button>
               </div>    
             </div> 
     
             <div class="card-deck">
               <div class="card">
                 <a href="python/Catch-The-Ball.html" rel="noopener noreferrer"><img src="assets\images\catch-ball.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Catch-The-Ball.html" rel="noopener noreferrer"><h5 class="card-title">Catch The Ball</h5></a>
-                </div>
+                <a href="python/Catch-The-Ball.html" rel="noopener noreferrer"><button class="button" ><span>Catch-The-Ball</a></span></button>
               </div>
               <div class="card">
                 <a href="python/Matchmaker.html" rel="noopener noreferrer"><img src="assets\images\matchmaker.jpg" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Matchmaker.html" rel="noopener noreferrer"><h5 class="card-title">Matchmaker</h5></a>
-                </div>
+                <a href="python/Matchmaker.html" rel="noopener noreferrer"><button class="button" ><span>Matchmaker</a></span></button>
               </div>    
             </div> 
 
             <div class="card-deck">
               <div class="card">
                 <a href="python/Simon-Says.html" rel="noopener noreferrer"><img src="assets\images\simon-says.png" class="card-image"></a>
-                <div class="card-body">
-                  <a href="python/Simon-Says.html" rel="noopener noreferrer"><h5 class="card-title">Simon Says</h5></a>
-                </div>
+                <a href="python/Simon-Says.html" rel="noopener noreferrer"><button class="button" ><span>Simon-Says</a></span></button>
               </div>
               <div class="card">
                 <a href="#" rel="noopener noreferrer"><img src="https://via.placeholder.com/350" class="card-image"></a>
-                <div class="card-body">
-                  <a href="#" rel="noopener noreferrer"><h5 class="card-title">Coming Soon!</h5></a>
-                </div>
+                <a href="#" rel="noopener noreferrer"><button class="button" ><span>Coming Soon !</a></span></button>
               </div>    
             </div>
            <!--  <div class="card-deck">
