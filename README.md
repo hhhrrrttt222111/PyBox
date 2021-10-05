@@ -43,7 +43,6 @@
 ```
 pip install pygame
 pip install freegames
-
 ```
 ```
 import turtle as tk
@@ -58,8 +57,11 @@ import pygame
 * https://www.freecodecamp.org/
 * http://www.grantjenks.com/blog/
 
-
-
+### 💻 Resource Links to get started
+* **[HackerRank](https://www.hackerrank.com/domains/python)**
+* **[Scrimba](https://scrimba.com/)**
+* **[Programiz](https://www.programiz.com/python-programming)**
+* **[Codecademy](https://www.codecademy.com/)**
 
 <br><br>
 ### Show some :green_heart: and :star: the Repo to SUPPORT 
