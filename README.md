@@ -62,6 +62,7 @@ import pygame
 * **[Scrimba](https://scrimba.com/)**
 * **[Programiz](https://www.programiz.com/python-programming)**
 * **[Codecademy](https://www.codecademy.com/)**
+* **[Scaler Topics](https://www.scaler.com/topics/python/)**
 
 <br><br>
 ### Show some :green_heart: and :star: the Repo to SUPPORT 
